@@ -46,11 +46,33 @@ function activate(context) {
 
 	context.subscriptions.push(disposable);
 
-	disposable = vscode.commands.registerCommand('mvc-php.sayHello', (name) => {		
-		console.log(`Hello ${name}!!!`);
+	disposable = vscode.commands.registerCommand('mvc-php.converToClass', () => {		
+		let dir = folderPath + "src" + path.sep + "domain";
+		fs.readdirSync(dir).forEach(file => {
+			if(!file.includes(".php")) {
+				let pathFile = dir + path.sep + file; 
+
+				fs.readFile(pathFile, 'utf8', function (err,data) {
+					if (err) {
+						return console.log(err);
+					}
+					let content = generateClass(file, data);
+
+					fs.rename(pathFile, pathFile+'.php', () => { 
+						fs.writeFile(pathFile+'.php', content, { flag: 'w+' }, err => {
+							console.log(err);
+						})
+					}); 
+				});
+			}
+		});
 	});
 
 	context.subscriptions.push(disposable);
+
+	/*context.subscriptions.push(vscode.commands.registerTextEditorCommand("mvc-php.sayHello", (editor, edit) => {
+		
+	}));*/
 }
 
 exports.activate = activate;
@@ -85,6 +107,29 @@ function generateHome() {
   );
 }
 
+function generateClass(name, data) {
+	name = name[0].toUpperCase() + name.substr(1);
+	let text = `<?php\n\n\tclass ${name}{\n`;
+	let functions = ``;
+
+	data.split("\n").forEach((item) => {
+		item = item.replace('\n', '');
+		item = item.replace('\r', '');
+		text += `\t\tvar $${item};\n`;
+
+		let newItem = item[0].toUpperCase() + item.substr(1);
+
+		functions += `\n\t\tfunction get${newItem}(){\n\t\t\treturn $this->${item};\n\t\t}
+		\n\t\tfunction set${newItem}($${item}){\n\t\t\t$this->${item} = $${item};\n\t\t}\n`;
+	});
+
+	text += functions;
+
+	text += `\n\t}`;
+	
+	return text;
+}
+
 function getCurrentWorkspaceFolder() {
   try {
     return vscode
@@ -96,7 +141,7 @@ function getCurrentWorkspaceFolder() {
   } catch (error) {
     console.error(error);
     return '';
-  }
+	}
 }
 
 module.exports = {

@@ -1,13 +1,14 @@
 {
 	"name": "mvc-php",
-	"displayName": "mvc_php",
+	"displayName": "PHP MVC",
 	"description": "Acelerar o processo de criação inicial de um novo projeto PHP utilizando o padrao MVC",
 	"version": "0.0.1",
 	"publisher": "ReenyeLima",
 	"repository": {
 		"type": "git",
-		"url": "git://github.com/username/repository.git"
+		"url": "git://github.com/ReenyeLima/mvc-php.git"
 	},
+	"icon": "assets/logo.png",
 	"engines": {
 		"vscode": "^1.51.0"
 	},
@@ -16,7 +17,7 @@
 	],
 	"activationEvents": [
 		"onCommand:mvc-php.initPhp",		
-		"onCommand:mvc-php.sayHello"
+		"onCommand:mvc-php.converToClass"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -26,8 +27,8 @@
 				"title": "Init PHP"
 			},
 			{
-        "command": "mvc-php.sayHello",
-				"title": "Say Hello"
+        "command": "mvc-php.converToClass",
+				"title": "Convert To Class"
       }
 		]
 	},
