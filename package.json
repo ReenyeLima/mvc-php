@@ -1,0 +1,50 @@
+{
+	"name": "mvc-php",
+	"displayName": "mvc_php",
+	"description": "Acelerar o processo de criação inicial de um novo projeto PHP utilizando o padrao MVC",
+	"version": "0.0.1",
+	"publisher": "ReenyeLima",
+	"repository": {
+		"type": "git",
+		"url": "git://github.com/username/repository.git"
+	},
+	"engines": {
+		"vscode": "^1.51.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:mvc-php.initPhp",		
+		"onCommand:mvc-php.sayHello"
+	],
+	"main": "./extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "mvc-php.initPhp",
+				"title": "Init PHP"
+			},
+			{
+        "command": "mvc-php.sayHello",
+				"title": "Say Hello"
+      }
+		]
+	},
+	"scripts": {
+		"lint": "eslint .",
+		"pretest": "npm run lint",
+		"test": "node ./test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/vscode": "^1.51.0",
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.0.0",
+		"@types/node": "^12.11.7",
+		"eslint": "^7.9.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.1.3",
+		"typescript": "^4.0.2",
+		"vscode-test": "^1.4.0"
+	}
+}
