@@ -17,7 +17,8 @@
 	],
 	"activationEvents": [
 		"onCommand:mvc-php.initPhp",		
-		"onCommand:mvc-php.converToClass"
+		"onCommand:mvc-php.converToClass",		
+		"onCommand:mvc-php.createProcess"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -29,6 +30,10 @@
 			{
         "command": "mvc-php.converToClass",
 				"title": "Convert To Class"
+      },
+			{
+        "command": "mvc-php.createProcess",
+				"title": "Create Process Pages"
       }
 		]
 	},
