@@ -4,7 +4,7 @@ Uma [extensão](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.m
 
 ## Quick Start 
 
--   **Passo 1**. [Instale a extensão](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) PHP MVC para o Visual Studio Code.
+-   **Passo 1**. Instale a extensão [PHP MVC](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) para o Visual Studio Code.
 -   **Passo 2**. No Visual Studio Code abra a pasta do projeto.
 -   **Passo 3**. Abra a Command Palette `Ctrl + Shift + p` e execute o comando 'Init PHP'.
 -   **Passo 4**. Edite o arquivo base.json de acordo com as informações do seu projeto.
