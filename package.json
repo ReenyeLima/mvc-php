@@ -2,7 +2,7 @@
 	"name": "mvc-php",
 	"displayName": "PHP MVC",
 	"description": "Acelerar o processo de criação inicial de um novo projeto PHP utilizando o padrao MVC",
-	"version": "0.0.1",
+	"version": "0.0.7",
 	"publisher": "ReenyeLima",
 	"repository": {
 		"type": "git",
@@ -18,7 +18,8 @@
 	"activationEvents": [
 		"onCommand:mvc-php.initPhp",		
 		"onCommand:mvc-php.converToClass",		
-		"onCommand:mvc-php.createProcess"
+		"onCommand:mvc-php.createProcess",
+		"onCommand:mvc-php.loadJson"
 	],
 	"main": "./extension.js",
 	"contributes": {
@@ -34,6 +35,11 @@
 			{
         "command": "mvc-php.createProcess",
 				"title": "Create Process Pages"
+      },
+			{
+        "command": "mvc-php.loadJson",
+				"title": "Load JSON",
+				"description": "Load JSON for create files and structure"
       }
 		]
 	},
