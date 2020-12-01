@@ -1,17 +1,17 @@
 # PHP extension for [Visual Studio Code](https://code.visualstudio.com/)
 
-Uma [extensão](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) que irá agilizar o processo de criação de uma API PHP baseada no padrão MVC.
+An [extension](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) that will streamline the process of creating a PHP API based on the MVC standard
 
 ## Quick Start 
 
--   **Passo 1**. Instale a extensão [PHP MVC](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) para o Visual Studio Code.
--   **Passo 2**. No Visual Studio Code abra a pasta do projeto.
--   **Passo 3**. Abra a Command Palette `Ctrl + Shift + p` e execute o comando 'Init PHP'.
--   **Passo 4**. Edite o arquivo base.json de acordo com as informações do seu projeto.
--   **Passo 5**. Na Command Palette execute o comando 'Load JSON'.
+-   **Step 1**. Install the [PHP MVC](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mvc-php) extension for Visual Studio Code.
+-   **Step 2**. In Visual Studio Code, open the project folder.
+-   **Step 3**. Open the Command Palette `Ctrl + Shift + p` and execute the command 'Init PHP'.
+-   **Step 4**. Edit the base.json file according to your project's information.
+-   **Step 5**. In the Command Palette, execute the command 'Load JSON'.
 
-## Dúvidas, problemas ou solicitações.
+## Doubts, problems or requests
 
--   Qualquer dúvida na utilização, entre em contato através dos comentários ou e-mail.
--   Encontrou problemas na extensão, por favor, [nos informe](https://github.com/ReenyeLima/mvc-php).
--   Todos os feedbacks serão bem vindos e atendidos.
+-   Any questions regarding the use, please contact us through comments or email.
+-   Found extension problems, please [let us know](https://github.com/ReenyeLima/mvc-php).
+-   All feedbacks are welcome and answered.
