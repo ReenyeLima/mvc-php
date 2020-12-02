@@ -12,6 +12,6 @@ An [extension](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mv
 
 ## Doubts, problems or requests
 
--   Any questions regarding the use, please contact us through comments or email.
--   Found extension problems, please [let us know](https://github.com/ReenyeLima/mvc-php).
--   All feedbacks are welcome and answered.
+-   Any questions regarding the use, please contact us through comments or email at reenyelima@hotmail.com.
+-   Any extension problems, please [let us know](https://github.com/ReenyeLima/mvc-php).
+-   All feedbacks is welcome and will be responded to.
