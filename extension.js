@@ -435,6 +435,8 @@ function JSONtoClass(arr) {
 					query = `\n\t\t\t\t$query = "INSERT INTO table_name (column1, column2) VALUES (value1, value2)";`;
 					break;
 				case "read":
+					condition = `\n\n\t\t\t\t$resultSet = Connection::getInstance()->query($query);`; 
+					condition += `\n\n\t\t\t\twhile($row = $resultSet->fetchObject()){`; 
 					query = `\n\t\t\t\t$query = "SELECT column1, column2 FROM table_name WHERE condition";`;
 					break;
 				case "update":
@@ -455,8 +457,9 @@ function JSONtoClass(arr) {
 			content += condition;
 			content += `\n\t\t\t\t}`;
 			content += `\n\t\t\t}catch(PDOException $e) {`;
+			content += `\n\t\t\t\t$result["err"] = $e->getMessage();`;
 			content += `\n\t\t\t}`;
-			content += `\n\n\t\t\treturn result;`;
+			content += `\n\n\t\t\treturn $result;`;
 			content += `\n\t\t}\n`;
 		});
 		
@@ -520,12 +523,13 @@ function JSONtoProcess(arr) {
 		let content = `<?php`;
 		content += `\n\n\trequire("../../domain/connection.php");`;
 		content += `\n\trequire("../../domain/${className}.php");`;
-		content += `\n\n\t$${objDao} = new ${className}DAO();`;
 		content += `\n\n\tclass ${className}Process {`;
+		content += `\n\t\tvar $${objDao};`;
 		requests.forEach((request) => {
-			content += `\n\t\tfunction ${request}($arr){`;
+			content += `\n\n\t\tfunction ${request}($arr){`;
+			content += `\n\t\t\t$${objDao} = new ${className}DAO();`;
 			content += `\n\t\t\t$sucess = "use to result to DAO";`;
-			content += `\n\t\t\thttp_response_code(202);`;
+			content += `\n\t\t\thttp_response_code(200);`;
 			content += `\n\t\t\techo json_encode($sucess);`;
 			content += `\n\t\t}\n`;
 		});
