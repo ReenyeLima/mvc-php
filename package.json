@@ -2,7 +2,7 @@
 	"name": "mvc-php",
 	"displayName": "PHP MVC",
 	"description": "Speed up the process of initial creation of a new PHP project using the MVC standard",
-	"version": "0.0.9",
+	"version": "0.0.10",
 	"publisher": "ReenyeLima",
 	"repository": {
 		"type": "git",
