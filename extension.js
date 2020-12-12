@@ -456,7 +456,7 @@ function JSONtoClass(arr) {
 			content += `\n\n\t\t\t\t$con = new Connection();`;
 			content += condition;
 			content += `\n\t\t\t\t}`;
-			content += `\n\n\t\t\t\t$con = null`;
+			content += `\n\n\t\t\t\t$con = null;`;
 			content += `\n\t\t\t}catch(PDOException $e) {`;
 			content += `\n\t\t\t\t$result["err"] = $e->getMessage();`;
 			content += `\n\t\t\t}`;
