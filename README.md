@@ -15,3 +15,7 @@ An [extension](https://marketplace.visualstudio.com/items?itemName=ReenyeLima.mv
 -   Any questions regarding the use, please contact us through comments or email at reenyelima@hotmail.com.
 -   Any extension problems, please [let us know](https://github.com/ReenyeLima/mvc-php).
 -   All feedbacks is welcome and will be responded to.
+    
+## Contribution
+    
+-   [Donate](https://www.paypal.com/donate?hosted_button_id=FGF95W6H9GGWQ)

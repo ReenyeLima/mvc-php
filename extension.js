@@ -50,9 +50,6 @@ function activate(context) {
 								"Falha na criação do arquivo HTML\r\n" + err.message
 							);
 						}
-						/*vscode.window.showInformationMessage(
-							"HTML criado com sucesso"
-						);*/
 					});
 				}
 			}
@@ -111,9 +108,6 @@ function activate(context) {
 					"Falha na criação do arquivo HTML\r\n" + err.message
 				);
 			}
-			/*vscode.window.showInformationMessage(
-				"HTML criado com sucesso"
-			);*/
 		});
 	});
 
@@ -136,7 +130,7 @@ function activate(context) {
 				dir = folderPath + "src" + path.sep + "controll";
 
 				let content = `<?php\n
-\trequire("../domain/${file}");\n
+\trequire("../domain/${file.toLowerCase()}");\n
 \trequire("../domain/conexao.php");\n
 \t$${file[0]}d = new ${name[0].toUpperCase() + name.substr(1)}DAO();\n
 \tinclude("configs.php");\n
@@ -156,9 +150,6 @@ function activate(context) {
 							"Falha na criação do arquivo HTML\r\n" + err.message
 						);
 					}
-					/*vscode.window.showInformationMessage(
-						"HTML criado com sucesso"
-					);*/
 				});
 			}
 		});
@@ -188,9 +179,6 @@ function activate(context) {
 					"Falha na criação do arquivo HTML\r\n" + err.message
 				);
 			}
-			/*vscode.window.showInformationMessage(
-				"HTML criado com sucesso"
-			);*/
 		});
 	});
 
@@ -355,9 +343,6 @@ function createConection(data) {
 				"Falha na criação do arquivo HTML\r\n" + err.message
 			);
 		}
-		/*vscode.window.showInformationMessage(
-			"HTML criado com sucesso"
-		);*/
 	});
 }
 
@@ -485,7 +470,7 @@ function createRoutes(arr) {
 		let objProc = `${obj.name[0]}p`;
 		
 		let content = `<?php`;
-		content += `\n\n\trequire("../process/process.${obj.name}.php");`;
+		content += `\n\n\trequire("../process/process.${obj.name.toLowerCase()}.php");`;
 		content += `\n\n\tinclude("configs.php");`;
 		content += `\n\n\t$${objProc} = new ${className}Process();`;
 		content += `\n\n\tswitch($_SERVER['REQUEST_METHOD']) {`;
@@ -523,15 +508,15 @@ function JSONtoProcess(arr) {
 		
 		let content = `<?php`;
 		content += `\n\n\trequire("../../domain/connection.php");`;
-		content += `\n\trequire("../../domain/${className}.php");`;
+		content += `\n\trequire("../../domain/${className.toLowerCase()}.php");`;
 		content += `\n\n\tclass ${className}Process {`;
 		content += `\n\t\tvar $${objDao};`;
 		requests.forEach((request) => {
 			content += `\n\n\t\tfunction ${request}($arr){`;
 			content += `\n\t\t\t$${objDao} = new ${className}DAO();`;
-			content += `\n\t\t\t$sucess = "use to result to DAO";`;
+			content += `\n\t\t\t$result = "use to result to DAO";`;
 			content += `\n\t\t\thttp_response_code(200);`;
-			content += `\n\t\t\techo json_encode($sucess);`;
+			content += `\n\t\t\techo json_encode($result);`;
 			content += `\n\t\t}\n`;
 		});
 		content += `\t}`;
